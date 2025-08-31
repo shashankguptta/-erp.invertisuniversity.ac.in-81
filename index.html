@@ -1,0 +1,800 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>
+	INVERTIS
+</title><link rel="shortcut icon" href="images/fevicon.png"><link href="css/bootstrap.min.css" rel="stylesheet"><link href="css/font-awesome.min.css" rel="stylesheet"><link href="css/my.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+     <!-- Bootstrap theme -->
+
+
+  
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+
+        <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.smartWizard.js"></script>
+    <script src="js/form-wizard.js"></script>
+    
+     <script src="js/jquery-1.10.0.min.js"></script>
+   
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/toastr.min.js"></script>
+
+
+    <!-- Custom styles for this template -->
+
+   
+    <link href="css/header-style.css" rel="stylesheet"><link href="css/responsive.css" rel="stylesheet"><link href="css/font-awesome-animation.min.css" rel="stylesheet"> 
+
+   <script src="js/ie-emulation-modes-warning.js"></script>
+ 
+  <link href="css/ch-pie-line.css" rel="stylesheet"><link href="css/bootstrap-multiselect.css" rel="stylesheet">
+    <script src="js/jsapi.js"></script>
+
+    <link rel="stylesheet" href="css/Ajaxcal.css"><link rel="stylesheet" href="css/toastr.min.css">
+     <script src="js/bootstrap-hover-dropdown.min.js"></script>
+
+     <script src="js/a.js"></script>
+   
+
+
+ 
+ <script>
+
+     function customAlert(msgType, txtMSG) {
+         msgType = msgType.toUpperCase()
+
+         if (msgType == "S") {
+             showSuccess(txtMSG);
+             return false;
+         }
+
+         if (msgType == "W") {
+             showWarning(txtMSG);
+             return false;
+         }
+
+         if (msgType == "E") {
+             showError(txtMSG);
+             return false;
+         }
+
+         if (msgType == "I") {
+             showInfo(txtMSG);
+             return false;
+         }
+     }
+     function showSuccess(msg) {
+         toastr.options = {
+             "closeButton": true,
+             "progressBar": true,
+             "showMethod": "fadeIn",
+             "hideMethod": "fadeOut",
+             "positionClass": "toast-top-right"
+         }
+         toastr.success(msg, "Success");
+         return false;
+     }
+
+     //Information!!!
+     function showInfo(msg) {
+         toastr.options = {
+             "closeButton": true,
+             "progressBar": true,
+             "positionClass": "toast-top-right",
+             "closeDuration": "60000"
+         }
+         toastr.info(msg, "Information");
+         return false;
+     }
+
+     //Warning!!!
+     function showWarning(msg) {
+         toastr.options = {
+             "closeButton": true,
+             "progressBar": true,
+             "positionClass": "toast-top-right"
+         }
+         toastr.warning(msg, "Warning");
+         return false;
+     }
+
+     //Error!!!
+     function showError(msg) {
+         toastr.options = {
+             "closeButton": true,
+             "progressBar": true,
+             "positionClass": "toast-top-right"
+         }
+         toastr.error(msg, "Error");
+         return false;
+     }
+
+
+     function isNumberKey(evt, obj) {
+
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         var value = obj.value;
+         var dotcontains = value.indexOf(".") != -1;
+         if (dotcontains)
+             if (charCode == 46) return false;
+         if (charCode == 46) return true;
+         if (charCode > 31 && (charCode < 48 || charCode > 57))
+             return false;
+         return true;
+     }
+
+
+
+
+     function NumericTextBox(evt) {
+
+         var charCode = (evt.charCode) ? evt.charCode : ((evt.which) ? evt.which : evt.keyCode);
+         if (charCode == 8 || charCode == 9 || //backspace
+             charCode == 46 || //delete
+             charCode == 13)   //enter key
+         {
+             return true;
+         }
+         else if (charCode >= 37 && charCode <= 40) //arrow keys
+         {
+             return true;
+         }
+         else if (charCode >= 48 && charCode <= 57) //0-9 on key pad
+         {
+             return true;
+         }
+         else if (charCode >= 96 && charCode <= 105) //0-9 on num pad
+         {
+             return true;
+         }
+         else
+             return false;
+
+
+
+         window.onload = function () {
+             var d = new Date().getTime();
+             document.getElementById("tid").value = d;
+         };
+     }
+
+
+     function isNumber(ob) {
+         var invalidChars = /[^0-9]+/gi
+         if (invalidChars.test(ob.value)) {
+             ob.value = ob.value.replace(invalidChars, "");
+         }
+     };
+     function SpecialCherValidateMarkPecentage(ob) {
+         var invalidChars = /[^a-zA-Z0-9 .+]/
+         if (invalidChars.test(ob.value)) {
+             ob.value = ob.value.replace(invalidChars, "");
+         }
+     };
+
+
+     function isAlphabetKey(evt) {
+         function isAlphabetKey(evt) {
+             var keyCode = (evt.which) ? evt.which : evt.keyCode
+             if ((keyCode < 65 || keyCode > 90) && (keyCode < 97 || keyCode > 123) && keyCode != 32)
+
+                 return false;
+             return true;
+
+         }
+
+     }
+
+
+ </script>
+   
+
+
+
+
+
+    <script type="text/javascript" lang="javascript">
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+
+
+      
+    </script>
+    <style>
+          .spaced input[type="radio"] 
+        {
+            margin-right: 10px;
+            margin-left: 10px;
+            border: 1px solid #ccc;
+            border-bottom: 0px;
+            /* Or any other value */
+        }
+
+   .modalExtender-heading .close, .modal-header .close {
+    color: #fff;
+    text-shadow: none;
+    opacity: 1;
+    -webkit-transition: -webkit-transform .2s ease-in-out;
+    transition: transform .2s ease-in-out;
+}
+
+.modal-content {
+    border-top: 0px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0px;
+    border-left: 0px solid white !important;
+    border-right: 0px solid white !important;
+    border-bottom: 1px solid white !important;
+}
+
+.close:hover {
+    color: #000;
+    text-shadow: none;
+    filter: alpha(opacity=1);
+    opacity: 1;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+
+
+   body {
+            overflow: hidden;
+        }
+            .modalBackground
+    {
+        background-color: Black;
+        filter: alpha(opacity=40);
+        opacity: 0.4;
+    }
+  
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+    .modalPopup
+    {
+        background-color: #FFFFFF;
+        width: 300px;
+        border: 3px solid #385965;
+    }
+    .modalPopup .header
+    {
+        background-color: #385965;
+        height: 30px;
+        color: White;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .modalPopup .body
+    {
+        min-height: 50px;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .modalPopup .footer
+    {
+        padding: 3px;
+    }
+    .modalPopup .yes, .modalPopup .no
+    {
+        height: 23px;
+        color: White;
+        line-height: 23px;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .modalPopup .yes
+    {
+        background-color: #385965;
+        border: 1px solid #0DA9D0;
+    }
+    .modalPopup .no
+    {
+        background-color: #385965;
+        border: 1px solid #5C5C5C;
+    }
+    .ajax__calendar_body {
+        width: auto !important;
+    }
+    .fa-ellipsis-v:before {
+    content: "\f142";
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14px;
+    height: 9px;
+    overflow: hidden;
+    color: #000;
+    position: absolute;
+    right: 0;
+    top: 38%;
+}
+    .fa_icon::before {
+    padding: 8px 0;
+    margin-right: 5px;
+}
+
+.fa_icon {
+    color: #ffffff;
+}
+
+
+
+
+
+.fa_icon {
+  transform: rotateY(90deg);
+  -webkit-animation: fa_icon 1s infinite;
+          animation: fa_icon 1s infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  
+}
+
+
+
+
+
+@-webkit-keyframes fa_icon {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(70deg);
+  }
+}
+@keyframes fa_icon {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(70deg);
+  }
+}
+    </style>
+<link href="WebResource_2.axd" type="text/css" rel="stylesheet"><link href="WebResource_1.axd" type="text/css" rel="stylesheet"></head>
+<body class="login_page enquiry_online" oncontextmenu="return false;">
+    <div class="container-fluid">
+        <div class="row reg_header">
+            <div class="col-md-2">
+                <a href="https://www.invertisuniversity.ac.in/" target="_blank">
+                    <img src="images/ilogo.png" class="reg_logo"></a>
+            </div>
+            <div class="col-md-10">
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <div class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000" data-pause="false">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="images/bg1.jpg">
+                        </div>
+
+                        <div class="item">
+                            <img src="images/bg2.png">
+                        </div>
+                        <div class="item">
+                            <img src="images/ib2.JPG">
+                        </div>
+                        <div class="item">
+                            <img src="images/mu_2.jpg">
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <form method="post" action="./loginForm.aspx" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTQ4NzQxNjI1OA9kFgICAw9kFgQCBA9kFgICBA8PZBYCHglvbmtleWRvd24FRWlmKGV2ZW50LmtleUNvZGUgPT0gMTMpe2RvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdidG5Mb2dpbicpLmNsaWNrKCk7fWQCEg9kFgJmD2QWAgIBD2QWBAIBDxBkZBYBZmQCBw8QZGQWAGRkariQzp9szTxHtS3ke1pC4HaSaRh8gU1RltpDeU3rSHY=">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="WebResource.axd" type="text/javascript"></script>
+
+
+<script src="js/MicrosoftAjax.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="js/MicrosoftAjaxWebForms.js" type="text/javascript"></script>
+<script src="ScriptResource.axd" type="text/javascript"></script>
+<script src="ScriptResource_1.axd" type="text/javascript"></script>
+<script src="ScriptResource_3.axd" type="text/javascript"></script>
+<script src="ScriptResource_2.axd" type="text/javascript"></script>
+<script src="ScriptResource_4.axd" type="text/javascript"></script>
+<script src="ScriptResource_8.axd" type="text/javascript"></script>
+<script src="ScriptResource_5.axd" type="text/javascript"></script>
+<script src="ScriptResource_6.axd" type="text/javascript"></script>
+<script src="ScriptResource_9.axd" type="text/javascript"></script>
+<script src="ScriptResource_7.axd" type="text/javascript"></script>
+<script src="ScriptResource_10.axd" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6ED0046F">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAChARylD2hAxxR6uGPyqVFsUdR78oILfrSzgm87C/a1IYZxpWckI3qdmfEJVCu2f5cEJlsYldsTO6iyyyy0NDvcAefp/6m8Qu5kctZFnszoV9cw/hWhL1BqkYKLpdsq0nyKinihG6d/Xh3PZm3b5AoMQ8liglvajnJeT9BwAFgu866zD3geEkm16Wth4Xe9SnxTEexnt4B+Usvi/SQpcJUmFYt+oHpneFVvl1q64o2y4ilVAMsOa7qz7tTFDATZZZlFy53coeWYiB+CQqtjO9EXCojD9zkXTyiKne2qZ/B8qEXIjgMmrjpsCBOe2dG8OeUEjHSTwmt9Zk5ivFM2Ul2OxALVk3+2NTz5QXqOoU3QIdHEeqowbIS8NDq7fxA9qSDyzFfddoERzI+PFWNOzCF0W2wgZ3H5F3TYOoTXfeLZE+Wys9vc4cPPiYN2as6KQtfYlwIdf4MI5dmzqXad/QnJE5czBG9SrZGfYQlxotCRRPcB98C5ceambLLGo0oe0NEvD5F84wItf3z/fRSzTjxr+OW88YJZb9qd2dJaq+/vm8M/2DrxhwyTRwSugxlYA8Zvvgc+YDar1R4dMbx5DnFbR641cov/aoeydTVMIL37LiggXnVTZ20UWIMsq2U57VGhsCVqOhoGpvi57bAvjC0BrdlcGC46xMT74pqjUPK+MV8/v2I+/GkMLwaGseM6Bz2efg1lwcudaqeq9j29YTms19RD/datwS1W8hXKN7gG5lPfOolPcKY8EwFVzYvgdAShTV+LQqz88vy9fnjTq6Bm6B3elJ4ptTzrlGDI0BNZxF0iq96KmPmot8Pmyjb9Ty8eBxXq7djIVQw4ImT306ojJ53vOXgYP8meqOg585yvJrcw5ghJjJUGHtdEqdX4ntaw=">
+</div>
+
+                    <div class="col-md-7">
+                    </div>
+                    <div class="col-md-4 form-wrapper">
+
+                        <div class="row" style="margin: 0;">
+                            <div class="col-md-12 text-center top_heading_border">
+                                <h2 class="top_heading">Sign in to your account</h2>
+                                <span></span>
+                            </div>
+
+                        </div>
+                        <div class="form-wizard-wrapper">
+                            <div class="form-wizard-wrapper-inner">
+                              <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUPpupup','UPpupup'], [], [], 90, '');
+//]]>
+</script>
+
+                          
+                                        <div id="pnlSignIn">
+	
+                                            <div class="login_form">
+                                                
+                                                <div class="p-20">
+                                                    <div class="form-group mt-35 mb-20">
+                                                        <input name="txtUserid" type="text" maxlength="30" id="txtUserid" class="form-control" autocomplet="off" placeholder="User Name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <!-- <input name="txtpassword" type="password" maxlength="30" id="txtpassword" class="form-control" autocomplet="off" placeholder="Password" onkeydown="if(event.keyCode == 13){document.getElementById('btnLogin').click();}"> -->
+                                                        <input name="txtpassword" type="password" maxlength="30" id="ttxtpassword" class="form-control pass1" autocomplet="off" placeholder="Password" >
+                                                        
+                                                        <table style="width:99%;">
+                                                            <tbody><tr>
+
+                                                                <td style="text-align:left">
+                                                       <a id="hrpConfirmation" class="forgetpassword mt-5" href="javascript:__doPostBack('hrpConfirmation','')">Forgot Password</a>
+                                                                </td>                                                                
+                                                                <td style="text-align:right">
+                                                  <a id="LinkAlumniRegistratin" class="forgetpassword mt-5" href="javascript:__doPostBack('LinkAlumniRegistratin','')">Alumni Registration</a>
+                                                                </td>
+
+                                                            </tr>
+
+                                                        </tbody></table>
+                                                       
+                                                       
+                                                        <span id="labelerror" style="color:Red;font-size:Small;"></span>
+                                                    </div>
+                                                    <div class="form-group text-c">
+                                                        <span id="lblHRUserId"></span>
+                                                        <input type="hidden" name="hdPass" id="hdPass">
+                                                        <!-- <a id="btnLogin" class="btn btn-default btn-npf btn-register" href="jjjavascript:__doPostBack('btnLogin','')" onclick="redirect()"> -->
+                                                        <a id="btnLogin" class="btn btn-default btn-npf btn-register" onclick="redirect()">
+                                                            <i class="fa fa-user fa_icon"></i> Sign in
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+</div>
+
+                                        
+
+           
+                                
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                       <div id="confirmModalCollege" class="modal fade confirm-modal" role="dialog" style="margin-top:16%;">
+                                    <div class="modal-content rad_box" style="width: 30%; margin-left: 35%; margin-right: 1%;">
+                                    
+                                         <div class="modal-header" style="background-color:#D64C45">
+                                            <button type="button" class="close" data-dismiss="modal">×</button>
+                                            <h4 class="modal-title text-center">
+                                                <span id="Label1" style="color:White;">College</span>
+                                            </h4>
+                                        </div>
+                                            <div class="modal-body text-center">
+                   <select name="ddlCollege" id="ddlCollege" class="form-control">
+
+</select>
+                              
+                                              
+                          
+                                            </div>
+                                          <div style="text-align:right;margin-bottom:20px;margin-right:5px;margin-left:5px;">
+                            <input type="button" name="btnCollagelogin" value="Login" onclick="javascript:__doPostBack('btnCollagelogin','')" id="btnCollagelogin" data-dismiss="modal" class="btn btn-default btn-npf btn-register">
+                                      
+
+                                            </div>
+                                     
+                                    </div>
+                 </div>
+
+
+
+
+                                    <div id="ConfirmAlumni" class="modal fade confirm-modal" role="dialog" style="text-align: center; margin-top: 10%;">
+
+                                    <div class="modal-content rad_box" style="width: 55%; margin:0 auto;">
+                                        <div class="modal-header" style="background-color:#D64C45">
+                                            <button type="button" class="close" data-dismiss="modal">×</button>
+                                            <h4 class="modal-title text-center">
+                                                <span id="lblCompany" style="color:White;">Alumni Student Registration</span>
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body text-left">
+                                            <div id="UPpupup">
+	
+
+
+                                                    <div class="row">
+
+
+                                                        <div id="pnlInteraction" class="pnlInteraction_block">
+		
+                                                           
+                                                             <div class="col-md-12 form-group">
+
+                                                             <div class="col-md-6 form-group">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 fa fa-ellipsis-v">
+                                                                        <label>Student ID Remember</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                               <span id="RadbtYesno" class="spaced"><input id="RadbtYesno_0" type="radio" name="RadbtYesno" value="1" checked="checked"><label for="RadbtYesno_0">No</label><input id="RadbtYesno_1" type="radio" name="RadbtYesno" value="2" onclick="javascript:setTimeout('__doPostBack(\'RadbtYesno$1\',\'\')', 0)"><label for="RadbtYesno_1">Yes</label></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                                 </div>
+                                                            
+                                                             <div class="col-md-6 form-group">
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                       
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        
+
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                            
+                                                            
+                                                             <div class="col-md-6 form-group">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 fa fa-ellipsis-v">
+                                                                        <label>Name</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <input name="txtAName" type="text" maxlength="50" id="txtAName" class="form-control" onkeypress="return isAlphabetKey(event)" placeholder="Name">
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                              <div class="col-md-6 form-group">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 fa fa-ellipsis-v">
+                                                                        <label>Program</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <select name="ddlProgram" onchange="javascript:setTimeout('__doPostBack(\'ddlProgram\',\'\')', 0)" id="ddlProgram" class="form-control">
+
+		</select>
+                                            
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            
+                                                             <div class="col-md-6 form-group">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 fa fa-ellipsis-v">
+                                                                        <label>Date of Birth</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                  <input name="txtAdob" type="text" id="txtAdob" class="form-control" onkeypress="return false" placeholder="Date of Birth" onkeydown="preventBackspace();" oncopy="return false;" onpaste="return false;" autocomplete="off">
+                                                                  
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 form-group">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 fa fa-ellipsis-v">
+                                                                        <label>Year of Passing</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                       <select name="ddlyearofpassing" id="ddlyearofpassing" class="form-control">
+			<option value="">Select</option>
+			<option value="2000">2000</option>
+			<option value="2001">2001</option>
+			<option value="2002">2002</option>
+			<option value="2003">2003</option>
+			<option value="2004">2004</option>
+			<option value="2005">2005</option>
+			<option value="2006">2006</option>
+			<option value="2007">2007</option>
+			<option value="2008">2008</option>
+			<option value="2009">2009</option>
+			<option value="2010">2010</option>
+			<option value="2011">2011</option>
+			<option value="2012">2012</option>
+			<option value="2013">2013</option>
+			<option value="2014">2014</option>
+			<option value="2015">2015</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+			<option value="2019">2019</option>
+			<option value="2020">2020</option>
+
+		</select>
+                                            
+                                                                    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                              <div class="col-md-6 form-group">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 fa fa-ellipsis-v">
+                                                                        <label>Email ID</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <input name="txtAEmailId" type="text" maxlength="50" id="txtAEmailId" class="form-control" placeholder="Email ID">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                              <div class="col-md-6 form-group">
+                                                                <div class="row">
+                                                                    <div class="col-md-4 fa fa-ellipsis-v">
+                                                                        <label>Mobile No</label>
+                                                                    </div>
+                                                                    <div class="col-md-8">
+                                                                        <input name="txtAMobilNo" type="text" maxlength="10" id="txtAMobilNo" class="form-control" placeholder="Mobile No" autocomplete="off" onkeydown="return NumericTextBox(event);" onchange="isNumber(this)" onkeyup="isNumber(this)">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                          
+
+                                                            <div class="col-md-12 form-group">
+                                                                <div class="row">
+                                                                  <div class="col-md-8">
+
+                                                                  </div>
+                                                                    <div class="col-md-4" style="text-align:center; margin-bottom: 10px;">
+                                                                       <a id="btnAlumanisave" class="btn btn-success" href="javascript:__doPostBack('btnAlumanisave','')">                                                                            
+                                                                           <i class="fa fa-save fa_icon" aria-hidden="true"></i>�&nbsp;Register
+                                                                       </a>
+                                                                    </div>
+                                                                    
+                                                                
+                                                                </div>
+                                                            </div>
+                                                        
+
+
+                                                        
+	</div>
+
+                                                    </div>
+
+                                                
+</div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+
+                    
+
+
+
+
+               <div id="confirmModal" class="modal fade confirm-modal" role="dialog">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="background-color:#D64C45">
+                                                <button type="button" class="close" data-dismiss="modal">×</button>
+                                                <h4 class="modal-title">Confirmation</h4>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                <p>Are You Sure?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <input type="button" name="hrpForgot" value="Yes" onclick="javascript:__doPostBack('hrpForgot','')" id="hrpForgot" data-dismiss="modal" class="btn btn-success">
+                                               
+                                                <button type="button" class="btn btn-danger" id="btnNo" data-dismiss="modal">No</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                 </div>
+                    <div class="col-md-1">
+                    </div>
+
+
+
+                
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.CalendarBehavior, {"cssClass":"cal_Theme1","format":"dd MMM yyyy","id":"CalendarExtender1"}, null, null, $get("txtAdob"));
+});
+//]]>
+</script>
+</form>
+
+            </div>
+
+        </div>
+        
+            <div class=" col-md-12 login_footer p-10">©2021 Invertis University, Invertis Village, Bareilly-Lucknow National Highway, NH-24, Bareilly-243123, Uttar Pradesh.</div>
+        
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+
+
+
+
+</body></html>
