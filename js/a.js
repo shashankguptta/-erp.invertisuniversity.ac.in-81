@@ -8,6 +8,6 @@ function redirect(){
     const password = document.querySelector('#ttxtpassword').value;
 
     if (name == "BC2023312" && password == "945743177"){
-        window.location.replace("https://shashankguptta.github.io/erp.invertisuniversity.ac.in-81/");
+        window.location.replace("https://shashankguptta.github.io/invertisuniversity.ac.in-81/");
     }
 }
